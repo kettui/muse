@@ -4,11 +4,8 @@ kill_timeout = 5
 processes = []
 
 [env]
-  CACHE_LIMIT = "512MB"
-  DISCORD_TOKEN = ""
-  YOUTUBE_API_KEY = ""
-  SPOTIFY_CLIENT_ID = ""
-  SPOTIFY_CLIENT_SECRET = ""
+  CACHE_LIMIT = '512MB'
+  DATA_DIR = './data'
 
 [experimental]
   allowed_public_ports = []
@@ -16,7 +13,11 @@ processes = []
 
 [[services]]
   http_checks = []
-  internal_port = 8080
+  internal_port = 3000
   processes = ["app"]
   protocol = "tcp"
   script_checks = []
+  [[services.ports]]
+    port = 3000
+    processes = [ "app" ]
+    protocol = "tcp"

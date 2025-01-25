@@ -110,3 +110,6 @@ dist
 
 # Fly.io
 fly.toml
+
+# local docker-compose file
+docker-compose.yml
